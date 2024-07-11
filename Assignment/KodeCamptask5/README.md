@@ -19,7 +19,7 @@ On the VPC Dashboard in the AWS Management Console, I Clicked on VPCs in the lef
 * IPv4 CIDR block: 10.0.0.0/16
 Left other settings as default and Clicked on Create VPC.
 
- ![VPC]('/Assignment/KodeCamptask5/VPCImg/VPC.png')
+ ![VPC](VPCImg/VPC.png)
 
 
  ### Create Subnets
@@ -41,9 +41,9 @@ On the VPC Dashboard, I Clicked on Subnets in the left navigation pane,Clicked C
 * IPv4 CIDR block: 10.0.2.0/24
 Clicked Create subnet.
 
- ![createsubnets]('/Assignment/KodeCamptask5/VPCImg/createSubnets.png')
+ ![createsubnets](VPCImg/createSubnets.png)
 
- ![subnets]('/Assignment/KodeCamptask5/VPCImg/pubAndPriSubnet.png')
+ ![subnets](VPCImg/pubAndPriSubnet.png)
 
 
 
@@ -57,11 +57,11 @@ Clicked Create subnet.
 On the VPC Dashboard, I clicked on Internet Gateways in the left navigation pane,Clicked Create internet gateway and entered the following details:
 * Name tag: KCVPC-IGW and Clicked Create internet gateway.
 
-![IGWcreated]('/Assignment/KodeCamptask5/VPCImg/IGWCreated.png')
+![IGWcreated](VPCImg/IGWCreated.png)
 
 Selected the newly created IGW and click Actions -> Attach to VPC and Selected KCVPC and click Attach internet gateway.
 
- ![IGWAttached]('/Assignment/KodeCamptask5/VPCImg/IGWAttached.png')
+ ![IGWAttached](VPCImg/IGWAttached.png)
 
 
  ### Configure Route Tables
@@ -81,11 +81,11 @@ Selected the newly created route table, clicked on the Routes tab, and then clic
 * Target: Select the Internet Gateway (KCVPC-IGW)
 Clicked Save routes,Clicked on the Subnet associations tab, and then click Edit subnet associations, Selected PublicSubnet and click Save associations.
 
- ![PublicRouteTable]('/Assignment/KodeCamptask5/VPCImg/pubRouteTab.png')
+ ![PublicRouteTable](VPCImg/pubRouteTab.png)
 
- ![SubAssPublicRouteTable]('/Assignment/KodeCamptask5/VPCImg/subasspubroutetab.png')
+ ![SubAssPublicRouteTable](VPCImg/subasspubroutetab.png)
 
- ![updatedIGWPublicrouteTable]('/Assignment/KodeCamptask5/VPCImg/updatedIGWPubroutetable.png')
+ ![updatedIGWPublicrouteTable](VPCImg/updatedIGWPubroutetable.png)
 
 #### PrivateRouteTable
 
@@ -96,9 +96,9 @@ Clicked Save routes,Clicked on the Subnet associations tab, and then click Edit 
 * VPC: KCVPC
 Clicked Create route table,Clicked on the Subnet associations tab, and then click Edit subnet associations,Selected PrivateSubnet and click Save associations.
 
- ![PrivateRouteTable]('/Assignment/KodeCamptask5/VPCImg/priRouteTab.png')
+ ![PrivateRouteTable](VPCImg/priRouteTab.png)
 
- ![SubAssPrivatRouteTable]('/Assignment/KodeCamptask5/VPCImg/subassprivroutetab.png')
+ ![SubAssPrivatRouteTable](VPCImg/subassprivroutetab.png)
 
 
  ### Configure NAT Gateway
@@ -116,9 +116,9 @@ Clicked Add route, and entered the following details:
 * Target: Select the NAT Gateway created earlier.
 Clicked Save routes.
 
- ![NATGW]('/Assignment/KodeCamptask5/VPCImg/NatGW.png')
+ ![NATGW](VPCImg/NatGW.png)
 
- ![PrivateRouteTableWithNATGW]('/Assignment//KodeCamptask5/VPCImg/priRouteTabwithNATGW.png')
+ ![PrivateRouteTableWithNATGW](VPCImg/priRouteTabwithNATGW.png)
 
 
 
@@ -135,7 +135,7 @@ security group acts as a virtual firewall for EC2 instances to control incoming 
 * VPC: KCVPC
 Clicked Create security group, Selected the newly created security group, clicked on the Inbound rules tab, and then click Edit inbound rules and added the following rules:HTTP HTTPS from anywhere and SSH from my local IP, Clicked Save rules and Clicked on the Outbound rules tab, and ensured All traffic is allowed.
 
- ![PublicSG]('/Assignment/KodeCamptask5/VPCImg/publicSG.png')
+ ![PublicSG](VPCImg/publicSG.png)
 
  #### Security Group for private instances
 
@@ -146,18 +146,12 @@ Clicked Create security group, Selected the newly created security group, clicke
 * VPC: KCVPC
 Clicked Create security group, Selected the newly created security group, clicked on the Inbound rules tab, and then click Edit inbound rules and added the following rules:HTTP HTTPS, SSH from  PublicSubnet CIDR block (10.0.1.0/24), Clicked Save rules and Clicked on the Outbound rules tab, and ensured All traffic is allowed.
 
- ![PrivateSG]('/Assignment/KodeCamptask5/VPCImg/privateSG.png')
+ ![PrivateSG](VPCImg/privateSG.png)
 
 
  ### Network ACLs
 
  Network Access Control Lists define inbound and outbound rule for subnets present in VPC, operate at the subnet level and are stateless
-
-
-
-![PublicSubnetNACL]('/Assignment/KodeCamptask5/VPCImg/pubSNACL.png')
-
-![PublicSubnetNACL]('/Assignment/KodeCamptask5/VPCImg/')
 
  #### Public Subnet NACL
 
@@ -168,9 +162,11 @@ Clicked Create security group, Selected the newly created security group, clicke
 * subnet Association: PublicSubnet
 Clicked Create Network ACLs, Selected the newly created Network ACLs, clicked on the Inbound rules tab, and then click Edit inbound rules and added the following rules:HTTP HTTPS from anywhere and SSH from my local IP, Clicked Save rules and Clicked on the Outbound rules tab, and ensured All traffic is allowed.
 
-![InboundPublicSubnetNACL]('/Assignment/KodeCamptask5/VPCImg/inboundPubSNACL.png')
+![PublicSubnetNACL](VPCImg/pubSNACL.png)
 
-![OutboundPublicSubnetNACL]('/Assignment/KodeCamptask5/VPCImg/outboundPubSNACL.png')
+![InboundPublicSubnetNACL](VPCImg/inboundPubSNACL.png)
+
+![OutboundPublicSubnetNACL](VPCImg/outboundPubSNACL.png)
 
 #### Private Subnet NACL
 
@@ -181,9 +177,9 @@ Clicked Create Network ACLs, Selected the newly created Network ACLs, clicked on
 * subnet Association: PrivateSubnet
 Clicked Create Network ACLs, Selected the newly created Network ACLs, clicked on the Inbound rules tab, and then click Edit inbound rules and added the following rules:HTTP HTTPS, SSH from  PublicSubnet CIDR block (10.0.1.0/24), Clicked Save rules and Clicked on the Outbound rules tab, and ensured All traffic is allowed from PublicSubnet CIDR block (10.0.1.0/24) and internet.
 
-![InboundPrivateSubnetNACL]('/Assignment/KodeCamptask5/VPCImg/inboundPriSNACL.png')
+![InboundPrivateSubnetNACL](VPCImg/inboundPriSNACL.png)
 
-![outboundPrivateSubnetNACL]('/Assignment/KodeCamptask5/VPCImg/outboundPriSNACL.png')
+![outboundPrivateSubnetNACL](VPCImg/outboundPriSNACL.png)
 
 
 ### Deploy Instances
@@ -199,23 +195,23 @@ In the AWS Management Console, went to the EC2 Dashboard,Clicked Launch Instance
      * Subnet:PublicSubnet and PrivateSubnet respectively 
 * Clicked on launch Instance
 
-![keypair]('/Assignment/KodeCamptask5/VPCImg/keyPair.png')
+![keypair](VPCImg/keyPair.png)
 
 #### FrontEnd Instance
 
-![LaunchFEInstance]('/Assignment/KodeCamptask5/VPCImg/FEInstance.png')
+![LaunchFEInstance](VPCImg/FEInstance.png)
 
-![FEServer]('/Assignment/KodeCamptask5/VPCImg/FEServer.png')
+![FEServer](VPCImg/FEServer.png)
 
-![ConnectedServer]('/Assignment/KodeCamptask5/VPCImg/launchedFEServer.png')
+![ConnectedServer](VPCImg/launchedFEServer.png)
 
 #### BackEnd Instance
 
-![LaunchBEInstance]('/Assignment/KodeCamptask5/VPCImg/BEInstance.png')
+![LaunchBEInstance](VPCImg/BEInstance.png)
 
-![BEServer]('/Assignment/KodeCamptask5/VPCImg/BEServer.png')
+![BEServer](VPCImg/BEServer.png)
 
 
 ### Diagram of the VPC architecture
 
-![VPCDiagram]('/Assignment/KodeCamptask5/VPCImg/VPCArch.png')
+![VPCDiagram](VPCImg/VPCArch.png)
