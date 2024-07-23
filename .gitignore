@@ -13,3 +13,5 @@ kc-venv/
 *.pem
 
 # *.pem
+**/.terraform/*
+.terraform
