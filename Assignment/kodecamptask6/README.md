@@ -12,7 +12,7 @@ Created a directory. Inside this directory(Root), I created the following config
 
 - Variables File (variables.tf): Define variables for configuration.[variables.tf](variables.tf)
 
-- Outputs File (outputs.tf): Define outputs to get the details of the created resources.[outputs.tf](outputs.tf)
+- Outputs File (outputs.tf): Define outputs to get the details of the created resources.[output.tf](output.tf)
 
 ### modules
 
@@ -24,7 +24,7 @@ Created a modules directory which house VPC and EC2 directories and created conf
 
 - variables.tf: Define variables for VPC configuration.[variables.tf](modules/vpc/variables.tf)
 
-- outputs.tf: Define outputs to get the details of the created resources.[outputs.tf](modules/vpc/outputs.tf)
+- outputs.tf: Define outputs to get the details of the created resources.[output.tf](modules/vpc/output.tf)
 
 #### EC2
 
@@ -32,7 +32,7 @@ Created a modules directory which house VPC and EC2 directories and created conf
 
 - variables.tf: Define variables for EC2 configuration.[variables.tf](modules/ec2/variables.tf)
 
-- outputs.tf: Define outputs to get the details of the created resources.[outputs.tf](modules/ec2/outputs.tf)
+- outputs.tf: Define outputs to get the details of the created resources.[output.tf](modules/ec2/output.tf)
 
 ### Script to install Nginx
 
