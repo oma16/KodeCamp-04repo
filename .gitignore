@@ -15,3 +15,4 @@ kc-venv/
 # *.pem
 **/.terraform/*
 .terraform
+*.tfstate
