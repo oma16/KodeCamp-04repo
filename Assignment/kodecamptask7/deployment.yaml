@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kodecamp-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kodecamp-app
+  template:
+    metadata:
+      labels:
+        app: kodecamp-app
+    spec:
+      containers:
+      - name: kodecamp-app
+        image: oma16/kodecamptask7-app:1.0.0
+        ports:
+        - containerPort: 8000
+        env:
+        - name: WELCOME_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: WELCOME_MESSAGE
