@@ -86,7 +86,7 @@
 
     ![deployapply](img/deployment.png)
 
-    ![deployapply](img/describepod.png)
+    ![deployapply](img/describedpod.png)
 
     ![deployapply](img/kubedeploy.png)
 
