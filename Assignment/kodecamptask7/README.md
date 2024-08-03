@@ -54,7 +54,7 @@
 
    ![dockerhub](img/dockerhub.png)
 
-       -  Docker image URL [Docker image URL](https://hub.docker.com/r/oma16/kodecamptask7-app)
+    -  Docker image URL [Docker image URL](https://hub.docker.com/r/oma16/kodecamptask7-app)
 
   - Got an error when dockerhubusername not included
 
@@ -66,17 +66,17 @@
 
 ### Created Kubernetes Manifest Files
 
-    - Created a file named deployment.yaml in the same directory as app.py 
+- Created a file named deployment.yaml in the same directory as app.py 
     [deployment.yaml](deployment.yaml)
 
-    - Created a file named service.yaml in the same directory as app.py 
+- Created a file named service.yaml in the same directory as app.py 
     [service.yaml](service.yaml)
 
 ### Deployed to Minikube
 
-   - Started minikube with minikube start -p "homelab" 
+- Started minikube with minikube start -p "homelab" 
 
-   -Created a namespace with "kubectl create ns kodecamp-app"
+- Created a namespace with "kubectl create ns kodecamp-app"
 
    ![namespace](img/namespacekube.png)
 
@@ -84,34 +84,34 @@
     
     - kubectl apply -f deployment.yaml -n kodecamp-app
 
-        ![deployapply](img/deployment.png)
+    ![deployapply](img/deployment.png)
 
-        ![deployapply](img/describepod.png)
+    ![deployapply](img/describepod.png)
 
-        ![deployapply](img/kubedeploy.png)
+    ![deployapply](img/kubedeploy.png)
 
-        ![deployapply](img/deployoutput0.png)
+    ![deployapply](img/deployoutput0.png)
 
-        ![deployapply](img/kubedeploy0.png)
+    ![deployapply](img/kubedeploy0.png)
 
-        ![deployapply](img/kubedeploy1.png)
+    ![deployapply](img/kubedeploy1.png)
 
     - kubectl apply -f service.yaml -n kodecamp-app
 
-        ![serviceapply](img/servicekub.png)
+    ![serviceapply](img/servicekub.png)
 
-        - Service describe and get
+    - Service describe and get
 
-            ![serviceapply](img/servicedescribe.png)
+    ![serviceapply](img/servicedescribe.png)
 
-            ![serviceapply](img/servicenamespace.png)
+    ![serviceapply](img/servicenamespace.png)
         
 ### Port Forwarded to Access the Application
-   - Forwarded the service port to a local port
-    - kubectl -n kodecamp-app port-forward service/kodecamp-service 8080:80 
+- Forwarded the service port to a local port
+ - kubectl -n kodecamp-app port-forward service/kodecamp-service 8080:80 
 
-    ![kube](img/kubedeploylocalhostterminal.png)
+![kube](img/kubedeploylocalhostterminal.png)
 
-    - Tested in the web browser with http://localhost:8080 to see the application running.
+- Tested in the web browser with http://localhost:8080 to see the application running.
 
-    ![kube](img/kubedeploylocalhost.png)
+![kube](img/kubedeploylocalhost.png)
