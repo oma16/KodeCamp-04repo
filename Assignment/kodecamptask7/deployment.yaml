@@ -13,13 +13,18 @@ spec:
         app: kodecamp-app
     spec:
       containers:
-      - name: kodecamp-app
-        image: oma16/kodecamptask7-app:1.0.0
-        ports:
-        - containerPort: 8000
-        env:
-        - name: WELCOME_MESSAGE
-          valueFrom:
-            configMapKeyRef:
-              name: app-config
-              key: WELCOME_MESSAGE
+        - name: kodecamp-app
+          image: oma16/kodecamptask7-app:1.0.0
+          ports:
+            - containerPort: 8000
+          env:
+            - name: WELCOME_MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: WELCOME_MESSAGE
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: DB_PASSWORD

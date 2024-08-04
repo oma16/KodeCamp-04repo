@@ -1,5 +1,5 @@
- import os
- from http.server import BaseHTTPRequestHandler, HTTPServer
+import os
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -11,9 +11,13 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         
         # Read the welcome message from an environment variable
         welcome_message = os.getenv('WELCOME_MESSAGE', 'Hello, Welcome to KodeCamp DevOps Bookcamp!')
+        
+        # Read the database password from an environment variable
+        db_password = os.getenv('DB_PASSWORD', 'default_password')
+        
         # Write the response message
         
-        response_message = "<html><body><h1>{welcome_message}</h1></body></html>"
+        response_message = f"<html><body><h1>Hello, Welcome to KodeCamp DevOps Bookcamp!</><h1>{welcome_message}</h1><p>DB Password Length: {len(db_password)}</p></body></html>"
         self.wfile.write(response_message.encode('utf-8'))
 
 def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):

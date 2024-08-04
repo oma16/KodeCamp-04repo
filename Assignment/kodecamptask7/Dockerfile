@@ -8,7 +8,9 @@ WORKDIR /app
 COPY app.py /app
 
 # Environment variable
-ENV app-config=WELCOME_MESSAGE
+# ENV WELCOME_MESSAGE=WELCOME_MESSAGE
+
+# ENV DB_PASSWORD=DB_PASSWORD
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000

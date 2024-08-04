@@ -115,3 +115,32 @@
 - Tested in the web browser with http://localhost:8080 to see the application running.
 
 ![kube](img/kubedeploylocalhost.png)
+
+
+## Kubernetes Deployment with ConfigMap and Secret
+
+- Built another image and tested on web browser with http://localhost:8000
+
+![docbrowser](img/dockerconfigmap.png)
+
+Created the ConfigMap and Secret and referenced them in the Deployment manifest.
+
+- Created ConfigMap  [configmap.yaml](configmap.yaml)
+- Applied the ConfigMap : kubectl apply -f configmap.yaml -n kodecamp-app
+
+![configmap](img/configmapcreated.png)
+
+![configmap](img/configdescribe.png)
+
+
+- Created Secret  [secret.yaml](secret.yaml)
+- Applied the Secret : kubectl apply -f secret.yaml -n kodecamp-app
+
+![configmap](img/secret.png)
+
+![configmap](img/secretdes.png)
+
+- Updated Deployment Manifest:kubectl apply -f deployment.yaml -n kodecamp-app
+
+![deployment](img/deploymentupdated.png)
+
